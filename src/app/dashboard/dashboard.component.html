@@ -1,0 +1,56 @@
+<button mat-raised-button color="primary" class="mt-3" (click)="addEmployee()">הוספת עובד</button>
+<table mat-table [dataSource]="dataSource" matSort class="table table-responsive">
+
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>מספר הטופס</th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> שם העובד </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstName}} {{element.lastName}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="department">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> מחלקה </th>
+    <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="role">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> תפקיד </th>
+    <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="car">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> רכב </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon *ngIf="element.car">check_circle</mat-icon>
+     </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> גיל </th>
+    <td mat-cell *matCellDef="let element"> {{calcAge(element.age)}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="edit">
+    <th *matHeaderCellDef mat-header-cell></th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button color="primary" (click)="edit(element)">
+        <mat-icon>edit</mat-icon>
+      </button>
+     </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5]"
+showFirstLastButtons>
+</mat-paginator>

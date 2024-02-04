@@ -1,0 +1,49 @@
+
+<form class="d-flex flex-column justify-content-center w-75 mx-auto pt-3" [formGroup]="userForm" (ngSubmit)="save()">
+  <h2>פרטי עובד</h2>
+  <mat-form-field appearance="outline">
+    <mat-label>שם פרטי</mat-label>
+    <input type="text"
+           matInput
+           formControlName="firstName">
+           <mat-error *ngIf="userForm.controls['firstName'].invalid">שדה שם פרטי הינו חובה ויכול להכיל אותיות בעברית בלבד</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="mt-1">
+    <mat-label>שם משפחה</mat-label>
+    <input type="text"
+           matInput
+           formControlName="lastName">
+           <mat-error *ngIf="userForm.controls['lastName'].invalid">שדה שם משפחה הינו חובה ויכול להכיל אותיות בעברית בלבד</mat-error>
+  </mat-form-field>
+  <mat-form-field  appearance="outline" class="mt-1">
+    <mat-label>תפקיד בחברה</mat-label>
+    <mat-select formControlName="role">
+      <mat-option>בחירת תפקיד</mat-option>
+      <mat-option *ngFor="let item of roles" [value]="item.role">{{item.role}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="userForm.controls['department'].invalid">יש לבחור תפקיד</mat-error>
+  </mat-form-field>
+  <mat-form-field  appearance="outline" class="mt-1">
+    <mat-label>מחלקה</mat-label>
+    <mat-select formControlName="department">
+      <mat-option>בחירת מחלקה</mat-option>
+      <mat-option *ngFor="let item of departments" [value]="item.department">{{item.department}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="userForm.controls['department'].invalid">יש לבחור מחלקה</mat-error>
+  </mat-form-field>
+  <mat-checkbox formControlName="car">
+  רכב חברה
+</mat-checkbox>
+<mat-form-field appearance="outline" class="mt-1">
+  <mat-label>גיל</mat-label>
+  <input type="tel"
+  digitOnly
+         matInput
+         maxlength="2"
+         formControlName="age">
+         <mat-error *ngIf="userForm.controls['age'].invalid">הגיל חייב להיות בטווח 18-99</mat-error>
+</mat-form-field>
+  <button mat-raised-button color="primary" class="mb-3" type="submit">שמירה</button>
+  <button mat-raised-button color="warn" class="mb-3" type="button" (click)="close()">ביטול</button>
+
+</form>

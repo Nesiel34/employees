@@ -1,0 +1,92 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "firstName": "עובד",
+      "lastName": "חדש",
+      "role": "מזכירה",
+      "department": "משאבי אנוש",
+      "car": null,
+      "age": "35"
+    },
+    {
+      "id": "2",
+      "firstName": "אבי",
+      "lastName": "אברהם",
+      "role": "מאפיין",
+      "department": "מערכות מידע",
+      "car": true,
+      "age": "26"
+    },
+    {
+      "id": "3",
+      "firstName": "ללא",
+      "lastName": "שם",
+      "role": "מזכירה",
+      "department": "הנהלה",
+      "car": false,
+      "age": "41"
+    },
+    {
+      "id": "4",
+      "firstName": "מנכל",
+      "lastName": "חברה",
+      "role": "מנכל",
+      "department": "הנהלה",
+      "car": false,
+      "age": "45"
+    }
+  ],
+  "departments": [
+    {
+      "department": "מכירות",
+      "id": "624b"
+    },
+    {
+      "department": "שיווק",
+      "id": "d148"
+    },
+    {
+      "department": "משאבי אנוש",
+      "id": "e3f2"
+    },
+    {
+      "department": "משפטית",
+      "id": "fc5b"
+    },
+    {
+      "department": "הנהלה",
+      "id": "105d"
+    },
+    {
+      "department": "מערכות מידע",
+      "id": "3ebd"
+    }
+  ],
+  "roles": [
+    {
+      "role": "מנכל",
+      "id": "c5e9"
+    },
+    {
+      "role": "מזכירה",
+      "id": "1364"
+    },
+    {
+      "role": "מאפיין",
+      "id": "5742"
+    },
+    {
+      "role": "מתכנת",
+      "id": "e1e0"
+    },
+    {
+      "role": "בודק",
+      "id": "4624"
+    },
+    {
+      "role": "מעצב",
+      "id": "6643"
+    }
+  ]
+}
